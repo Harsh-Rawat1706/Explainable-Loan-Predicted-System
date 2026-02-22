@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loan Predictor</title>
+</head>
+<body>
+
+<h2>Loan Application Form</h2>
+
+<form action="/predict" method="post">
+
+Dependents: <input type="number" name="dependents"><br><br>
+
+Education:
+<select name="education">
+    <option value="1">Graduate</option>
+    <option value="0">Not Graduate</option>
+</select><br><br>
+
+Self Employed:
+<select name="self_employed">
+    <option value="1">Yes</option>
+    <option value="0">No</option>
+</select><br><br>
+
+Income: <input type="number" name="income"><br><br>
+Loan Amount: <input type="number" name="loan_amount"><br><br>
+Loan Term: <input type="number" name="loan_term"><br><br>
+CIBIL Score: <input type="number" name="cibil"><br><br>
+
+Residential Assets: <input type="number" name="res_assets"><br><br>
+Commercial Assets: <input type="number" name="com_assets"><br><br>
+Luxury Assets: <input type="number" name="lux_assets"><br><br>
+Bank Assets: <input type="number" name="bank_assets"><br><br>
+
+<button type="submit">Predict</button>
+
+</form>
+
+</body>
+</html>

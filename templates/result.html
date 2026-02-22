@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loan Result</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+        }
+        .box {
+            margin: 30px auto;
+            padding: 20px;
+            width: 60%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+        .approved {
+            color: green;
+        }
+        .rejected {
+            color: red;
+        }
+        ul {
+            text-align: left;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+
+    <h2>Loan Prediction Result</h2>
+
+    {% if prediction == 1 %}
+        <h3 class="approved">✅ Loan Approved</h3>
+    {% else %}
+        <h3 class="rejected">❌ Loan Rejected</h3>
+    {% endif %}
+
+    <h4>Approval Probability: {{ probability }}%</h4>
+
+    {% if prediction == 0 %}
+        <h3>📌 How to Improve Your Chances:</h3>
+        <ul>
+            {% for s in suggestions %}
+                <li>{{ s }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>🎉 Your profile meets the approval criteria.</p>
+    {% endif %}
+
+    <br><br>
+    <a href="/">🔙 Try Again</a>
+
+</div>
+
+</body>
+</html>
