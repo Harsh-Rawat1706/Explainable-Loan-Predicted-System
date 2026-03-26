@@ -1,0 +1,180 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: 
+        linear-gradient(rgba(20, 20, 40, 0.7), rgba(20, 20, 40, 0.7)),
+        url('/static/photo-1559526324-4b87b5e36e44.jpg');
+
+    background-size: cover;
+    background-position: center;
+}
+
+/* Wrapper */
+.main-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Card Layout */
+.card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(15px);
+    border-radius: 16px;
+    padding: 25px;
+    width: 90%;
+    max-width: 1100px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    color: white;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Info Section */
+.info-section h2 {
+    margin-bottom: 10px;
+}
+
+.features {
+    margin-top: 15px;
+}
+
+.features p {
+    margin-bottom: 8px;
+}
+
+/* Form Section */
+.card-header {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.section-title {
+    margin-bottom: 10px;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+}
+
+/* Inputs */
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+input, select {
+    padding: 9px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+/* Input with icon */
+.input-icon {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 8px;
+    padding: 0 8px;
+}
+
+.input-icon span {
+    color: #555;
+}
+
+.input-icon input {
+    border: none;
+    flex: 1;
+}
+
+/* Button */
+.btn {
+    margin-top: 15px;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ff7eb3, #ff758c);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+/* Footer */
+.footer-note {
+    margin-top: 10px;
+    font-size: 12px;
+    text-align: center;
+    opacity: 0.8;
+}
+
+/* Result Page */
+.result-card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Status */
+.status {
+    font-size: 24px;
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+.approved {
+    color: #00ffae;
+}
+
+.rejected {
+    color: #ff4d4d;
+}
+
+/* Suggestions */
+.suggestions {
+    text-align: left;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

@@ -1,58 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loan Result</title>
-    <style>
-        body {
-            font-family: Arial;
-            text-align: center;
-        }
-        .box {
-            margin: 30px auto;
-            padding: 20px;
-            width: 60%;
-            border-radius: 10px;
-            box-shadow: 0 0 10px gray;
-        }
-        .approved {
-            color: green;
-        }
-        .rejected {
-            color: red;
-        }
-        ul {
-            text-align: left;
-            display: inline-block;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
-<div class="box">
+<div class="main-wrapper">
 
-    <h2>Loan Prediction Result</h2>
+    <div class="card result-card">
 
-    {% if prediction == 1 %}
-        <h3 class="approved">✅ Loan Approved</h3>
-    {% else %}
-        <h3 class="rejected">❌ Loan Rejected</h3>
-    {% endif %}
+        <!-- RESULT -->
+        <div class="result-section">
 
-    <h4>Approval Probability: {{ probability }}%</h4>
+            <h1>📊 Prediction Result</h1>
 
-    {% if prediction == 0 %}
-        <h3>📌 How to Improve Your Chances:</h3>
-        <ul>
-            {% for s in suggestions %}
-                <li>{{ s }}</li>
-            {% endfor %}
-        </ul>
-    {% else %}
-        <p>🎉 Your profile meets the approval criteria.</p>
-    {% endif %}
+            {% if prediction == 1 %}
+                <div class="status approved">✅ Loan Approved</div>
+            {% else %}
+                <div class="status rejected">❌ Loan Rejected</div>
+            {% endif %}
 
-    <br><br>
-    <a href="/">🔙 Try Again</a>
+            <p class="probability">
+                Approval Probability: <strong>{{ probability }}%</strong>
+            </p>
+
+            {% if prediction == 0 %}
+                <div class="suggestions">
+                    <h3>📌 Improve Your Chances</h3>
+                    <ul>
+                        {% for s in suggestions %}
+                            <li>{{ s }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% else %}
+                <p class="success-msg">🎉 Your profile meets the approval criteria!</p>
+            {% endif %}
+
+        </div>
+
+        <!-- BUTTON -->
+        <div class="action-section">
+            <a href="/" class="btn">Try Again</a>
+        </div>
+
+    </div>
 
 </div>
 

@@ -1,41 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loan Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
-<h2>Loan Application Form</h2>
+<div class="main-wrapper">
 
-<form action="/predict" method="post">
+    <div class="card">
 
-Dependents: <input type="number" name="dependents"><br><br>
+        <!-- LEFT INFO SECTION -->
+        <div class="info-section">
+            <h2>🚀 Smart Loan Prediction</h2>
+            <p>
+                Our AI analyzes your financial profile and predicts loan approval
+                chances instantly using advanced machine learning.
+            </p>
 
-Education:
-<select name="education">
-    <option value="1">Graduate</option>
-    <option value="0">Not Graduate</option>
-</select><br><br>
+            <div class="features">
+                <p>✔ Instant Results</p>
+                <p>✔ AI-Based Analysis</p>
+                <p>✔ Accurate Predictions</p>
+            </div>
+        </div>
 
-Self Employed:
-<select name="self_employed">
-    <option value="1">Yes</option>
-    <option value="0">No</option>
-</select><br><br>
+        <!-- RIGHT FORM SECTION -->
+        <div class="form-section">
 
-Income: <input type="number" name="income"><br><br>
-Loan Amount: <input type="number" name="loan_amount"><br><br>
-Loan Term: <input type="number" name="loan_term"><br><br>
-CIBIL Score: <input type="number" name="cibil"><br><br>
+            <div class="card-header">
+                <h1>💰 Loan Approval Predictor</h1>
+                <p>Check your loan eligibility instantly</p>
+            </div>
 
-Residential Assets: <input type="number" name="res_assets"><br><br>
-Commercial Assets: <input type="number" name="com_assets"><br><br>
-Luxury Assets: <input type="number" name="lux_assets"><br><br>
-Bank Assets: <input type="number" name="bank_assets"><br><br>
+            <form action="/predict" method="post">
 
-<button type="submit">Predict</button>
+                <h3 class="section-title">📋 Financial Details</h3>
 
-</form>
+                <div class="grid">
+
+                    <div class="input-group">
+                        <label>Dependents</label>
+                        <input type="number" name="dependents" placeholder="e.g. 2" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Education</label>
+                        <select name="education">
+                            <option value="1">Graduate</option>
+                            <option value="0">Not Graduate</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Self Employed</label>
+                        <select name="self_employed">
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Income</label>
+                        <div class="input-icon">
+                            <span>₹</span>
+                            <input type="number" name="income" placeholder="Monthly income" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Loan Amount</label>
+                        <input type="number" name="loan_amount" placeholder="Requested loan" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Loan Term</label>
+                        <input type="number" name="loan_term" placeholder="In Years" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>CIBIL Score</label>
+                        <input type="number" name="cibil" placeholder="300 - 900" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Residential Assets</label>
+                        <input type="number" name="res_assets" placeholder="Value">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Commercial Assets</label>
+                        <input type="number" name="com_assets" placeholder="Value">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Luxury Assets</label>
+                        <input type="number" name="lux_assets" placeholder="Value">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Bank Assets</label>
+                        <input type="number" name="bank_assets" placeholder="Balance">
+                    </div>
+
+                </div>
+
+                <button type="submit" class="btn">Predict Loan</button>
+
+                <p class="footer-note">🔒 Your data is secure</p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
 
 </body>
 </html>
